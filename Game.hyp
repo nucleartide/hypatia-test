@@ -1,0 +1,48 @@
+module Game
+
+#
+# Boilerplate.
+#
+
+type Void
+
+alias Color = Native.Numeral
+rectfill : Native.Numeral -> Native.Numeral -> Native.Numeral -> Native.Numeral -> Color -> Void
+
+infixl 6 + plus
+infixl 6 - minus
+(+) : Native.Numeral -> Native.Numeral -> Native.Numeral
+(-) : Native.Numeral -> Native.Numeral -> Native.Numeral
+
+btn : Native.Numeral -> Native.Boolean
+
+#
+# Actual code...
+#
+
+type Vec2
+  = Vec2 Native.Numeral Native.Numeral
+
+alias Position = Vec2
+alias Width    = Native.Numeral
+alias Height   = Native.Numeral
+
+type Player
+  = Player Position Width Height
+
+player_update : Player -> Player
+player_update (Player (Vec2 x y) w h) =
+  if btn 0 then
+    Player (Vec2 (x-(1)) y) w h
+  else if btn 1 then
+    Player (Vec2 (x+(1)) y) w h
+  else if btn 2 then
+    Player (Vec2 x (y-(1))) w h
+  else if btn 3 then
+    Player (Vec2 x (y+(1))) w h
+  else
+    Player (Vec2 x y) w h
+
+player_draw : Player -> Void
+player_draw (Player (Vec2 x y) w h) =
+  rectfill x y ((x+w+(-1))) (y+h+(-1)) 14

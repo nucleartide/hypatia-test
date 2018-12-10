@@ -1,0 +1,8 @@
+Game.Vec2 : (Native.Numeral -> (Native.Numeral -> Game.Vec2))
+Game.rectfill : (Native.Numeral -> (Native.Numeral -> (Native.Numeral -> (Native.Numeral -> (Native.Numeral -> Game.Void)))))
+Game.btn : (Native.Numeral -> Native.Boolean)
+Game.Player : (Game.Vec2 -> (Native.Numeral -> (Native.Numeral -> Game.Player)))
+Game.plus : (Native.Numeral -> (Native.Numeral -> Native.Numeral))
+Game.player_update : (Game.Player -> Game.Player)
+Game.minus : (Native.Numeral -> (Native.Numeral -> Native.Numeral))
+Game.player_draw : (Game.Player -> Game.Void)

@@ -1,0 +1,2 @@
+Scratch.Vec2 : (Native.Numeral -> (Native.Numeral -> Scratch.Vec2))
+Scratch.vec2 : (Native.Numeral -> (Native.Numeral -> Scratch.Vec2))
